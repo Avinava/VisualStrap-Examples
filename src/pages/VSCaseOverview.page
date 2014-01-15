@@ -1,0 +1,103 @@
+<apex:page standardController="Case" sidebar="false" docType="html-5.0">
+    <style>
+        .glow{
+             animation: flashBg 0.9s;
+             -webkit-animation: flashBg 0.9s alternate infinite;
+        }
+        
+        @keyframes flashBg
+        {
+            from {
+                    border: 3px solid #ff6161;
+                    
+                 }
+            to {
+                    border: 3px solid #ffd324;
+                    
+               }
+        }
+        
+        @-webkit-keyframes flashBg /* Safari and Chrome */
+        {
+            from {
+                    border: 3px solid #ff6161;
+                    
+                 }
+            to {
+                    border: 3px solid #ffd324;
+                    box-shadow: 0px 0px 50px 3px #e14f1c;
+               }
+           
+        }
+    </style>
+    <vs:importvisualstrap />
+    <vs:visualstrapblock >
+        <vs:panel type="primary" title="Case Overview">
+            <vs:row >
+                <vs:column type="col-md-3">
+                    <div class="glow">
+                        <vs:well style="text-align:center">                           
+                            <vs:row >
+                                <vs:column type="col-md-4" style="font-size:54px">
+                                    <vs:glyph icon="time" style="color:red"/>                       
+                                </vs:column>
+                                <vs:column type="col-md-8">                                
+                                    <h2>
+                                        {!ROUND(NOW() - Case.CreatedDate,0)}
+                                    </h2>
+                                    <p class="text-muted infolabel">Days waiting for response</p>                       
+                                </vs:column>
+                            </vs:row>                            
+                        </vs:well>
+                    </div> 
+                </vs:column>
+                <vs:column type="col-md-3">
+                    <vs:well style="text-align:center">
+                        <vs:row >
+                            <vs:column type="col-md-4" style="font-size:54px">
+                                <vs:glyph icon="flag"/>                        
+                            </vs:column>
+                            <vs:column type="col-md-8">                                
+                                <h2>
+                                    {!Case.Status}
+                                </h2>
+                                <p class="text-muted infolabel">Current case status</p>                       
+                            </vs:column>
+                        </vs:row>
+                    </vs:well>
+                </vs:column>
+                <vs:column type="col-md-3">
+                    <vs:well style="text-align:center">
+                        <vs:row >
+                            <vs:column type="col-md-4" style="font-size:54px">
+                                <vs:glyph icon="filter"/>                        
+                            </vs:column>
+                            <vs:column type="col-md-8">                                
+                                <h2>
+                                    {!Case.Type}
+                                </h2>
+                                <p class="text-muted infolabel">Case Type</p>                       
+                            </vs:column>
+                        </vs:row>
+                    </vs:well>
+                </vs:column>
+                <vs:column type="col-md-3">
+                    <vs:well style="text-align:center">
+                        <vs:row >
+                            <vs:column type="col-md-4" style="font-size:54px">
+                                <vs:glyph icon="comment"/>                        
+                            </vs:column>
+                            <vs:column type="col-md-8">                                
+                                <p>
+                                    {!Case.Subject}
+                                </p>
+                                <p class="text-muted infolabel">Subject</p>                       
+                            </vs:column>
+                        </vs:row>
+                    </vs:well>
+                </vs:column>
+            </vs:row>
+        </vs:panel>
+    </vs:visualstrapblock>
+    <apex:detail title="false"/>
+</apex:page>
