@@ -1,0 +1,101 @@
+<apex:page showHeader="false" docType="html-5.0" >
+    
+    <vs:importvisualstrap />
+    <style>
+        body{
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+        .intro{
+            margin-top:20px;
+            font-size:140%;
+            font-weight: 200;
+        }
+    </style>
+    <vs:visualstrapblock >
+        <apex:form >
+        
+            <!--header -->
+            <vs:navbar brand="Blogforce9" inverse="true" type="fixed-top">
+                A site about VisualStrap
+            </vs:navbar>
+            
+            <!-- highlighted content -->
+            <apex:outputPanel layout="block" styleClass="container" >
+                <apex:outputPanel layout="block" styleClass="jumbotron" style="text-align:center">
+                    
+                    <h1><vs:glyph icon="bookmark" style="font-size:75%"/> VisualStrap Demo Site</h1>
+                    <p>This is a example how VisualStrap can be used to create a site page. All the standard components can be used inside this page without any problem </p>
+                    <apex:commandButton styleClass="btn-lg btn-success" value="Submit Request" html-data-toggle="modal" html-data-target="#newRequest"/>
+                </apex:outputPanel>
+            </apex:outputPanel>
+            
+            
+            <!-- the feature section -->
+            <apex:outputPanel layout="block" styleClass="container" >
+                <apex:outputPanel layout="block" styleClass="row">
+                    <apex:outputPanel layout="block" styleClass="col-md-4">
+                        <apex:outputPanel layout="block" styleClass="well">
+                            <h3> 
+                                <vs:glyph icon="cog"/> Optimized
+                            </h3>
+                            
+                            <div class="intro" >VisualStrap is based on Bootstrap 3. It uses a wrapper style class to designate the areas where actual theming using bootstrap is required. VisualStrap CSS is optimized to work with Visualforce pages even with standard stylesheet and header on.</div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="block" styleClass="col-md-4">
+                        <apex:outputPanel layout="block" styleClass="well">
+                            <h3> 
+                                <vs:glyph icon="retweet"/> Flexible
+                            </h3>
+                            
+                            <div class="intro" >VisualStrap is based on bootstrap there are many components available in the package that can be used to create pages. If are aware about bootstrap components you can directly implement them in page without using components </div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="block" styleClass="col-md-4">
+                        <apex:outputPanel layout="block" styleClass="well">
+                            <h3> 
+                                <vs:glyph icon="tasks"/> Components
+                            </h3>
+                            
+                            <div class="intro" >There are many components available in the package that makes Bootstrap/VisualStrap implementation inside a page very easy. These components handles most of the styling based on a very familiar syntax</div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </apex:outputPanel>
+            
+            <!-- footer -->
+            <vs:navbar brand="Blogforce9" inverse="true" type="fixed-bottom" layout="none">
+                <center>
+                    <apex:outputPanel styleClass="text-muted" style="margin:20px;font-size:130%" layout="block">
+                        <vs:glyph icon="bullhorn"/> Site powered by Force.com
+                    </apex:outputPanel>
+                </center>
+            </vs:navbar>
+            
+            <!-- the modal form-->
+            <vs:modal title="New Request" id="newRequest">
+                <apex:pageBlock mode="maindetail">
+                    <apex:pageBlockSection >
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >First Name</apex:outputLabel>
+                            <apex:input type="text"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >Last Name</apex:outputLabel>
+                            <apex:input type="text"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >Email</apex:outputLabel>
+                            <apex:input type="text"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:outputPanel styleClass="modal-footer" layout="block">
+                    <apex:commandButton value="Close" styleClass="btn-warning" html-data-dismiss="modal"/>
+                    <apex:commandButton value="Save Request" styleClass="btn-success" html-data-dismiss="modal"/>
+                </apex:outputPanel>
+            </vs:modal>
+            
+        </apex:form>
+    </vs:visualstrapblock>
+</apex:page>

@@ -8,6 +8,7 @@ This project contains some examples that are developed using VisualStrap.
 
 * VSCaseOverview : A simple highlight bar style page that gives a quick glance of the Case.
 * VSDashboard : This page is a simple dashboard that gives user about the daily information that they need.  Like pending activities for the day, assigned cases, assigned leads, last viewed Accounts/contacts. 
+* VSSite : Demonstrates how a Force.com site page can be created using VisualStrap.
 
 
 

@@ -7,6 +7,7 @@
     <types>
         <members>VSCaseOverview</members>
         <members>VSDashBoard</members>
+        <members>VSSite</members>
         <name>ApexPage</name>
     </types>
     <version>27.0</version>
